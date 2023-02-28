@@ -1,0 +1,201 @@
+﻿@model IEnumerable<Profesor.Models.bdc_infoActivo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>REPORTE</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="tablaresultado">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_area.fk_area)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_centroCosto.centroCosto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_clase.clase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_cuenta_activo.cuenta_activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_cuenta_pasivo.cuenta_pasivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_nom_cuenta_activo.nom_cuenta_activo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_nom_cuenta_pasivo.nom_cuenta_pasivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.bdc_subclase.subclase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.denominacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.subdenominacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.num_serie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ubicación)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cod_barras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fk_traspaso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fk_financiamiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fech_compra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.n_factura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.obs_general)
+            </th>
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_area.fk_area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_centroCosto.centroCosto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_clase.clase)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_cuenta_activo.cuenta_activo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_cuenta_pasivo.cuenta_pasivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_nom_cuenta_activo.nom_cuenta_activo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_nom_cuenta_pasivo.nom_cuenta_pasivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bdc_subclase.subclase)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.denominacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subdenominacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.num_serie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ubicación)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cod_barras)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fk_traspaso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fk_financiamiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fech_compra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.n_factura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.obs_general)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#tablaresultado').DataTable({
+
+
+                "language": {
+                    "lengthMenu": "Mostrar" +
+                        ` <select class="custom-select custom-select-sm form-control form-control-sm">
+                    <option value='10'>10</option>
+                    <option value='25'>25</option>
+                    <option value='50'>50</option>
+                    <option value='100'>100</option>
+                    <option value='-1'>All</option>
+                </select>` +
+                        " registros por pagina",
+                    "zeroRecords": "Nada encontrado  - Lo siento",
+                    "info": "Mostrando pagina _PAGE_ de _PAGES_",
+                    "infoEmpty": "Registros no disponibles",
+                    "infoFiltered": "(filtrando de  _MAX_ registros totales)",
+                    'search': 'Buscar;',
+                    'paginate': {
+                        'next': 'Siguiente',
+                        'previous': 'Anterior'
+                    }
+                }
+            });
+        });
+
+
+
+    </script>
+}

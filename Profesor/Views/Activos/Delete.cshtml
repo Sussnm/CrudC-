@@ -1,0 +1,200 @@
+﻿@model Profesor.Models.bdc_infoActivo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>bdc_infoActivo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_area.fk_area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_area.fk_area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_centroCosto.centroCosto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_centroCosto.centroCosto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_clase.clase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_clase.clase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_cuenta_activo.cuenta_activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_cuenta_activo.cuenta_activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_cuenta_pasivo.cuenta_pasivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_cuenta_pasivo.cuenta_pasivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_nom_cuenta_activo.nom_cuenta_activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_nom_cuenta_activo.nom_cuenta_activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_nom_cuenta_pasivo.nom_cuenta_pasivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_nom_cuenta_pasivo.nom_cuenta_pasivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bdc_subclase.subclase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bdc_subclase.subclase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.denominacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.denominacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subdenominacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subdenominacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_serie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_serie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ubicación)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ubicación)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_barras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_barras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fk_traspaso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fk_traspaso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fk_financiamiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fk_financiamiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fech_compra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fech_compra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.n_factura)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.n_factura)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.obs_general)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.obs_general)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
